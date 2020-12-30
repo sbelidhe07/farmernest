@@ -1,0 +1,144 @@
+<html>
+<head>
+ <title>Farmernest | Behold The Power Of Farmer</title>
+ <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../static/css/dashboard.css"/>
+<link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+$(document).ready(function(){
+setTimeout(googleTranslateElementInit(),1000);
+});
+</script>
+  </head>
+<body>
+<section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark" style="height:100vh; background-size: cover; background-image: url(../static/img/pexels-jill-wellington-533360.jpg);">
+<nav class="navbar fixed-top  navbar-expand-lg navbar-light bg-light">
+ <a class="navbar-brand" href="#">
+    <img src="../static/img/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+    Farmer Dashboard
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><i class="fa fa-fw fa-home"></i>Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Stock
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Summary</a>
+          <a class="dropdown-item" href="#">Add Stock</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Logistics
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Summary</a>
+          <a class="dropdown-item" href="#">Add Logistic</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Order
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ url_for('orderssu') }}" target="_blank">Summary</a>
+      </li>
+    </ul>
+  </div>
+    <div class="navbar-collapse collapse">
+        <ul class="navbar-nav mx-auto">
+	      <li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		 <i class="fa fa-cog fa-fw"></i>Setting 
+		</a>
+		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		  <a class="dropdown-item" href="#">Change Password</a>
+		  <a class="dropdown-item" href="#">Change Native Language</a>
+		</li>
+	       <li class="nav-item">
+		 <a class="nav-link" href="{{ url_for('notifications') }}" target="_blank"><i class='far fa-bell' style='font-size:24px'></i></a>
+	       </li>
+	       <li class="nav-item">
+		 <a class="nav-link" href="{{ url_for('support') }}" target="_blank"><i class='fas fa-video' style='font-size:24px'></i></a>
+	       </li>
+	      <li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  <i class="fas fa-user-circle" style='font-size:24px'></i>
+		</a>
+		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		  <a class="dropdown-item" href="#">Logout</a>
+	      </li>
+       </ul>
+   </div>
+</nav>
+<div class="wrapper" id="page-wrapper">
+
+	<div class="container" id="content" tabindex="-1">
+
+		<div class="row">
+
+                        <div class="metr">
+                         <a class="metrostyle orgmetro" style="cursor: pointer" href="">
+
+                             <span class="fa fa-users" style="font-size: 2em; color: white; padding-left: 0.3em; margin-top: 3px;float:left"></span>
+                             <span style="color: white; font-size: 1.1em; float: right; margin-top: 5px; padding-right: 0.2em">0</span>
+                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">Consumers</span>
+                         </a>
+                         <a class="metrostyle eenmetro" style="cursor: pointer" href="">
+
+                             <span class="fa fa-users" style="font-size: 2em; color: white; padding-left: 0.3em; margin-top: 3px ;float:left"></span>
+                             <span style="color: white; font-size:  1.1em; float: right; margin-top: 5px; padding-right: 0.2em">0</span>
+                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:50px">Vendors</span>
+
+                         </a>
+                          <a class="metrostyle reemetro" style="cursor: pointer" href="">
+                             <span class="fa fa-list" style="font-size: 2em; color: white; padding-left: 0.3em ; margin-top: 3px ;float:left"></span>
+                             <span style="color: white; font-size:  1.1em; float: right; margin-top: 5px; padding-right: 0.2em">0</span>
+                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">Stock Items</span>
+                         </a>
+                          <a class="metrostyle yoometro" style="cursor: pointer" href="">
+                             <span class="fa fa-thumbs-o-up" style="font-size: 2em; color: white; padding-left: 0.3em; margin-top: 3px ;float:left"></span>
+                             <span style="color: white; font-size:  1.1em; float: right; margin-top: 5px; padding-right: 0.2em">0</span>
+                             <span style="color: white; float: left; margin-top: 35px; margin-left: 10px;margin-right:80px">Orders - Completed</span>
+                         </a>
+                     </div>
+                        <div class="metr">
+                         <a style="cursor: pointer" class="metrostyle  toometro" href="">
+                                <span class="fa fa-shopping-cart" style="font-size: 2em; color: white; padding-left: 0.3em; margin-top: 3px ;float:left"></span>
+                                <span style="color: white; font-size:  1.1em; float: right; margin-top: 5px; padding-right: 0.2em">0</span>
+                                <span style="color: white; float: left; margin-top: 35px; margin-left: 10px ;margin-right:100px">Orders - In Progress</span>
+                            </a>
+                              <a style="cursor: pointer" class="metrostyle metrostylelarge  boometro">
+                                <span class="fa fa-remove" style="font-size:2em;color:white;padding-left:0.3em;margin-top:3px ;float:left"></span>
+                                <span style="color:white;font-size: 1.1em;float:right;margin-top:5px;padding-right:0.2em">0</span>   
+                                <span style="color:white;float:left;margin-top:35px;margin-left:10px;margin-right:100px">Orders - Cancelled </span>
+                            </a>
+                        </div>
+                        </div> 
+	</div>
+</div>
+<div id="google_translate_element"></div>
+</section>
+</body>
+</html>
