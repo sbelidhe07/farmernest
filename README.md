@@ -41,5 +41,5 @@
  
  ###### One  can use below mentioned users for farmer as well as vendor roles
    * username : user password : admin123 role : Farmer
-   * username : user2 password : admin123 role : vendor
+   * username : user2 password : admin123 role : Vendor
  
