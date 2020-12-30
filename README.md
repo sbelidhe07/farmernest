@@ -29,7 +29,7 @@
 
 ##### All the above points will be addressed with the farmer portal that we will be building  in this presentation 
  
- ######## Need to follow below steps as part of configuration
+ ###### Need to follow below steps as part of configuration
  * Create Virtual Environment --> python3 -m venv flask
  * Activate the environment --> source flask/bin/activate
  * Install Flask library --> pip3 install flask
