@@ -1,4 +1,5 @@
-# Farmernest
+# Farmernest (HackNagpur 2020 idea submission)
+
 
 ##### India is an agricultural country and one third population depends on the agricultural  sector directly or indirectly. As food being essential need of mankind, much emphasis has been on commercialising agricultural production.
 
