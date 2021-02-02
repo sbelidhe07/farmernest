@@ -1,0 +1,139 @@
+<html>
+<head>
+	<title>Farmernest | Behold The Power Of Farmer</title>
+     <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" id="bootstrap-css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/streamr-client@4.1.6/dist/streamr-client.web.js"></script>
+    <script src="../static/js/streamr.js"></script>
+    
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/css/streamr.css"/>
+   
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon-16x16.png">
+<link rel="manifest" href="../static/img/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+$(document).ready(function(){
+setTimeout(googleTranslateElementInit(),1000);
+});
+
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+  </head>
+<body>
+<div w3-include-html="{{ url_for('menubar') }}"></div>
+<script>
+includeHTML();
+</script>
+
+<section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark" style="height:100vh; background-size: cover; background-image: url(../static/img/pexels-jill-wellington-533360.jpg);">
+  <div class="auth-wrapper">
+        <div class="auth-inner">
+        <h2>Streamr Integration</h2>
+            <form id="streamrform">
+                <div class="input-group form-group">
+                    <input type="text" name="fname" id="fname" class="form-control" placeholder="Farmer Name">
+                </div>
+		 <div class="input-group form-group">
+                  <select name="mcrop" id="mcrop"  class="selectpicker form-control" data-style="btn-primary" style="color:gray">
+                      <option>Select Major Crop</option>
+                      <option value="rice">Rice</option>
+                      <option value="wheat">Wheat</option>
+                      <option value="jowar">Jowar</option>
+                      <option value="corn">Corn</option>
+                  </select>
+                </div>
+		 <div class="input-group form-group">
+                  <select name="microp" id="microp"  class="selectpicker form-control" data-style="btn-primary" styele="color:gray">
+                      <option>Select Major Crop</option>
+                      <option value="rice">Rice</option>
+                      <option value="wheat">Wheat</option>
+                      <option value="jowar">Jowar</option>
+                      <option value="corn">Corn</option>
+                  </select>
+                </div>
+                <div class="input-group form-group">
+                  <input type="text" name="aplanted" id="aplanted" class="form-control" placeholder="Area Planted">
+		  <div class="input-group-append">
+			  <select name="aunit" id="aunit"  class="selectpicker form-control" data-style="btn-primary" styele="color:gray">
+			      <option value="">Select Unit</option>
+			      <option value="acre">Acre</option>
+			      <option value="sqyd">Square Yard</option>
+			      <option value="sqmile">Square Mile</option>
+			      <option value=hectare">Hectare</option>
+			  </select>
+                   </div>
+		</div>
+                <div class="input-group form-group">
+                  <input type="text" name="production" id="production" class="form-control" placeholder="Production">
+		  <div class="input-group-append">
+			  <select name="punit" id="punit"  class="selectpicker form-control" data-style="btn-primary" styele="color:gray">
+			      <option value="">Select Unit</option>
+			      <option value="tonne">Tonne</option>
+			  </select>
+                   </div>
+		</div>
+                <div class="input-group form-group">
+                  <input type="text" name="hprice" id="hprice" class="form-control" placeholder="Harvest Price">
+		  <div class="input-group-append">
+			  <select name="currency" id="currency"  class="selectpicker form-control" data-style="btn-primary" styele="color:gray">
+			      <option value="">Select Currency</option>
+			      <option value="inr">INR</option>
+			      <option value="usd">USD</option>
+			  </select>
+                   </div>
+                </div>
+                <div class="input-group form-group">
+                    <input type="text" name="location" id="location" class="form-control" placeholder="Location">
+                </div>
+                <div class="form-group">
+                    <input type="button" id="btn" value="Publish" class="btn btn-primary btn-block">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
