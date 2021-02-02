@@ -47,6 +47,18 @@ def orderssu():
         return render_template('orders_summary.html');
     return render_template('index.html')
 
+@app.route('/streamrint')
+def streamrint():
+    if 'username' in session:
+        return render_template('streamr_dataunion.html');
+    return render_template('index.html')
+
+@app.route('/menubar')
+def menubar():
+    if 'username' in session:
+        return render_template('menubar.html');
+    return render_template('index.html')
+
 @app.route('/support')
 def support():
     if 'username' in session:
@@ -71,8 +83,7 @@ def login():
     print(request.form['role']);
     login_user = users.find_one({'username': request.form['username'], 'role': request.form['role']})
     if login_user:
-        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user[
-            'password'].encode('utf-8'):
+        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
             session['username'] = request.form['username']
             session['role'] = request.form['role']
             return redirect(url_for('index'))
@@ -87,7 +98,7 @@ def register():
         existing_user = users.find_one({'username': request.form['username'], 'role': request.form['role']})
 
         if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
+            hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'))
             users.insert({'username': request.form['username'], 'password': hashpass, 'role': request.form['role']})
             session['username'] = request.form['username']
             session['role'] = request.form['role']
